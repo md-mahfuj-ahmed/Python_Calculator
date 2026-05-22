@@ -1,14 +1,28 @@
-num1 = float(input("1st number: "))
-num2 = float(input("2nd number: "))
-op = input("operation (+,-,*,/): ")
+while True:
+    print("\n--- Simple Calculator Menu ---")
+    print("Type 'exit' as the operation if you want to quit.")
+    
+    # Taking user inputs
+    num1 = float(input("Enter 1st number: "))
+    num2 = float(input("Enter 2nd number: "))
+    op = input("Enter operation (+, -, *, /) or 'exit': ").strip().lower()
 
-if op == "+" :
-    print("result", num1 + num2)
-elif op == "-" :
-    print("result", num1 - num2)
-elif op == "*" :
-    print("result", num1 * num2)
-elif op == "/" :
-    print("result", num1 / num2)
-else :
-    print("invalid operation!")
+    # Checking for exit condition
+    if op == "exit":
+        print("Closing the calculator. Thank you!")
+        break
+
+    # Performing mathematical operations
+    if op == "+":
+        print("Result:", num1 + num2)
+    elif op == "-":
+        print("Result:", num1 - num2)
+    elif op == "*":
+        print("Result:", num1 * num2)
+    elif op == "/":
+        if num2 == 0:
+            print("Error: Division by zero is not allowed!")
+        else:
+            print("Result:", num1 / num2)
+    else:
+        print("Error: Invalid operation requested!")
